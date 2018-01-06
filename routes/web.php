@@ -11,6 +11,20 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
+//
+//Route::get('/penilaian', function () {
+//    return view('kaleya.penilaian.show');
+//});
+//
+//Route::get('/penilaian/create', function () {
+//    return view('kaleya.penilaian.add');
+//});
+
+Route::resource('kandidat','controllerKandidat');
+Route::resource('penilaian','controllerPenilaian');
+

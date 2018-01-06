@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\modelKandidat;
+use App\modelPenilaian;
 use Illuminate\Http\Request;
 
 class controllerKandidat extends Controller
@@ -13,7 +15,8 @@ class controllerKandidat extends Controller
      */
     public function index()
     {
-        //
+        $data = modelKandidat::all();
+        return view('kaleya.penilaian.show')->with(['data'=> $data]);
     }
 
     /**
@@ -23,7 +26,7 @@ class controllerKandidat extends Controller
      */
     public function create()
     {
-        //
+        return view('kaleya.kandidat.add');
     }
 
     /**
@@ -34,7 +37,11 @@ class controllerKandidat extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new modelKandidat();
+        $data->nama = $request->nama;
+        $data->nis = $request->nis;
+        $data->save();
+        return redirect('kandidat')->with('sweet-alert','<script> window.onload = swal("Sukses!", "Berhasil Menambahkan Data", "success")</script>');
     }
 
     /**
@@ -79,6 +86,8 @@ class controllerKandidat extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = modelPenilaian::where('id',$id)->first();
+        $data->delete();
+        return redirect('kandidat.index')->with('sweet-alert','Berhasil Menambahkan Data');
     }
 }

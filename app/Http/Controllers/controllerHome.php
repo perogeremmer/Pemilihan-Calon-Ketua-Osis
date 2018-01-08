@@ -13,7 +13,7 @@ class controllerHome extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -34,7 +34,7 @@ class controllerHome extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return redirect('kandidat')->with('sweet-alert','<script> window.onload = swal("Sukses!", "Berhasil Login", "success")</script>');
     }
 
     /**

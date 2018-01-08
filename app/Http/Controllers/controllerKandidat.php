@@ -42,7 +42,7 @@ class controllerKandidat extends Controller
         $data->nis = $request->nis;
         $data->save();
         return redirect('kandidat')->with('sweet-alert','<script> window.onload = swal("Sukses!", "Berhasil Menambahkan Data", "success")</script>');
-    }
+     }
 
     /**
      * Display the specified resource.

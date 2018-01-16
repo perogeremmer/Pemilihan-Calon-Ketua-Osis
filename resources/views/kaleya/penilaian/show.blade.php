@@ -14,16 +14,10 @@
     <section class="content">
         <!-- Default box -->
         <div class="box">
+
             <div class="box-header with-border">
                 <h3 class="box-title">Data Calon Ketua OSIS SMPN 29 Jakarta</h3>
-                @php $penilaian = \App\modelPenilaian::all() @endphp
-                @if(count($penilaian) > 2)
-                    @foreach(\App\modelPenilaian::all() as $cek)
-                        @if($cek->total_nilai < 0.1)
-                            <a class='col-lg-offset-5 btn btn-default' href="{{ route('penilaian.index') }}">Hitung Penilaian</a>
-                        @endif
-                    @endforeach
-                @endif
+                <a class='col-lg-offset-5 btn btn-default' href="{{ route('penilaian.index') }}">Hitung Penilaian</a>
                 </div>
                 <div class="box-body">
                     <div class="box">
@@ -58,14 +52,14 @@
                                         <td>{{ $nilai->total_nilai }}</td>
                                         @endforeach
                                         <td>
-                                            @foreach(\App\modelPenilaian::where('kandidat_id',$dataz->id)->get() as $nilai)
-                                            <form action="{{ route('kandidat.destroy', $nilai->id) }}">
-                                                {{ method_field('DELETE') }}
+                                            <form action="{{ route('kandidat.destroy', $dataz->id) }}" method="post">
                                                 {{ csrf_field() }}
-                                                <a class="btn btn-md btn-primary" href="{{ route('penilaian.edit', $nilai->id) }}">Penilaian</a>
-                                                <button class="btn btn-md btn-danger">Hapus</button>
+                                                {{ method_field('DELETE') }}
+                                                @foreach(\App\modelPenilaian::where('kandidat_id',$dataz->id)->get() as $nilai)
+                                                    <a class="btn btn-md btn-primary" href="{{ route('penilaian.edit', $nilai->id) }}">Penilaian</a>
+                                                @endforeach
+                                                <button class="btn btn-md btn-danger" type="submit">Hapus</button>
                                             </form>
-                                            @endforeach
                                         </td>
                                     </tr>
                                 @endforeach

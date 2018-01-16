@@ -19,14 +19,13 @@
         <!-- User Account: style can be found in dropdown.less -->
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <span class="hidden-xs"> {{ \Illuminate\Support\Facades\Session::get('name') }}
-            </span>
+            Admin
           </a>
           <ul class="dropdown-menu">
             <!-- User image -->
             <li class="user-header">
               <p>
-               {{ \Illuminate\Support\Facades\Session::get('name') }} - KALEYA
+               Admin - SPK SMPN 29 Jakarta
              </p>
                <a href="/logout" class="btn btn-default btn-flat">Sign out</a>
            </li>
@@ -36,7 +35,7 @@
          </li>
          <!-- Menu Footer-->
          <li class="user-footer">
-          <small>KALEYA - Kalender Budaya</small>
+          <small>SPK - SMPN 29 Jakarta</small>
         </li>
       </ul>
     </ul>

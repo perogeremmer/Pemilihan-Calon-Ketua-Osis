@@ -86,8 +86,11 @@ class controllerKandidat extends Controller
      */
     public function destroy($id)
     {
-        $data = modelPenilaian::where('id',$id)->first();
-        $data->delete();
-        return redirect('kandidat.index')->with('sweet-alert','Berhasil Menambahkan Data');
+        $first = modelPenilaian::where('kandidat_id',$id)->first();
+        $first->delete();
+//        $data = modelKandidat::where('id',$id)->first();
+//        $data->delete();
+
+        return redirect()->route('kandidat.index')->with('sweet-alert','<script> window.onload = swal("Sukses!", "Berhasil Menghapus Data", "success")</script>');
     }
 }

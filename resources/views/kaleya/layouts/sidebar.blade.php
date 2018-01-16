@@ -20,8 +20,8 @@
       <li class="header">MAIN NAVIGATION</li>
       <li class="active treeview">
         <ul class="treeview-menu">
-         {{--<li class="active"><a href="{{ route('kaleya.home') }}"><i class="fa fa-circle-o"></i> Home</a></li>--}}
-         {{--<li class="active"><a href="{{ route('acara.index') }}"><i class="fa fa-circle-o"></i> Acara</a></li>--}}
+         <li class="active"><a href="{{ route('kandidat.index') }}"><i class="fa fa-circle-o"></i> Home</a></li>
+         <li class="active"><a href="{{ route('kandidat.create') }}"><i class="fa fa-circle-o"></i> Tambah Kandidat</a></li>
          {{--<li class="active"><a href="{{ route('pesan.index') }}"><i class="fa fa-envelope"></i> Pesan</a></li>--}}
        </ul>
      </li>

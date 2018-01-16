@@ -2,7 +2,7 @@
     <div class="pull-right hidden-xs">
         <b>Version</b> 1.0.0
     </div>
-    <strong>Copyright &copy; 2017-{{Carbon\carbon::now()->year}} <a href="#">KALEYA</a>.</strong> All rights
+    <strong>Copyright &copy; 2017-{{Carbon\carbon::now()->year}} <a href="#">SPK SMPN 29 Jakarta</a></strong> All rights
     reserved.
 </footer>
 
